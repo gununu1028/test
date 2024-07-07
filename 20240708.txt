@@ -1,0 +1,101 @@
+# 練習問題1
+def print_height(height, func):
+	print(f'身長は{func(height)}です')
+
+def with_cm(h):
+	return f'{h}cm'
+
+def with_m(h):
+	return f'{h/100}m'
+
+target_height = int(input('身長(cm)を入力してください>>'))
+print_height(target_height, with_cm)
+print_height(target_height, with_m)
+
+
+# 練習問題2
+def print_height(height, func):
+	print(f'身長は{func(height)}です')
+
+target_height = int(input('身長(cm)を入力してください>>'))
+print_height(target_height, lambda h: f'{h}cm')
+print_height(target_height, lambda h: f'{h/100}m')
+
+
+# 練習問題4
+class Student:
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+
+takahashi = Student('高橋太郎', 19)
+print('名前’, takahashi.name)
+print('年齢', takahashi.age)
+
+
+# 練習問題5
+class Teacher:
+	def __init__(self, name, department):
+		self.name = name
+		self.age = department
+
+takahashi = Teacher(‘高橋太郎’, ‘情報システム科’)
+print(‘名前’, takahashi.name)
+print(‘学科', takahashi.department)
+
+
+# 練習問題6
+class Car:
+    def drive(self, mileage):
+        self.total_mileage += mileage
+    
+    def disp(self):
+        print(f'{self.owner}さんの車の総走行距離は{self.total_mileage}kmです')
+        
+mycar = Car('山形太郎’, 20000)
+mycar.disp()
+mycar.drive(15)
+mycar.disp()
+
+
+# 練習問題7
+math
+
+class Triangle:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def get_area(self):
+        s = (self.a + self.b + self.c) / 2
+        area = math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+        return area
+
+    def is_equilateral(self):
+        return self.a == self.b == self.c
+
+t1 = Triangle(3, 4, 5)
+t2 = Triangle(5, 5, 5)
+print("t1の面積", t1.get_area())
+print("t1は正三角形?", t1.is_equilateral())
+print("t2の面積", t2.get_area())
+print("t2は正三角形?", t2.is_equilateral())
+
+
+# 練習問題8
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    @classmethod
+    def average_score(cls, students_list):
+        total_score = sum(student.score for student in students_list)
+        return total_score / len(students_list)
+
+students_list = [Student('田中', 95), Student('山田', 88), Student('佐藤', 72)]
+print("平均点は", Student.average_score(students_list))
+
+
+
