@@ -1,32 +1,23 @@
-class StudentCard:
-  def __init__(self, id, name):
-    self.id = id
-    self.name = name
-  def print_info(self):
-    print('学籍番号:', self.id)
-    print('氏名:', self.name)
+try:
+    number = int(input("整数を入力してください: "))
+    doubled = number * 2
+    print(f"結果: {doubled}")
+except ValueError:
+    print("エラー: 整数を入力してください")
 
-class IStudentCard(StudentCard):
-  def __init__(self, id, name, nationality):
-    self.nationality = nationality
-    super().__init__(id, name)
-  def print_info(self):
-    print(f'国籍: {self.nationality}')
-    print(f'学籍番号: {self.id}')
-    print(f'氏名: {self.name}')
 
-class Person:
-    def __init__(self, lastname, firstname):
-        self.lastname = lastname
-        self.firstname = firstname
- 
-    def show(self):
-        print(f'私は{self.lastname}{self.firstname}です！')
- 
-class BusinessPerson(Person):
-    def work(self):
-        print(f'{self.lastname}{self.firstname}は働いています！’)
+d = {'a': 'エー', 'b': 'ビー'}
+i = input('文字を入力してください:')
+try:
+    print(d[i])
+except KeyError:
+    print(‘エラーが出ました!')
 
-a = BusinessPerson(‘山形’, ‘太郎’)
-a.show()
-a.work()
+          
+d = {'a': 'エー', 'b': 'ビー'}
+i = input('文字を入力してください:')
+result = d.get(i)
+if result is None:
+    print(‘エラーが出ました!’)
+else:
+    print(result)
