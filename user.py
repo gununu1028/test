@@ -5,7 +5,7 @@ class User():
     def test_and_mark(self, article):
         return False
 
-    def read(self,article):
+    def read(self, article):
         if self.test_and_mark(article):
             b = article.body
         else:
